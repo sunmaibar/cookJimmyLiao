@@ -3,13 +3,14 @@ import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import AllRecipes from "../components/AllRecipes"
 import SEO from "../components/SEO"
+import cover from "../../static/main-cover.jpg"
 export default function Home() {
   return (
     <Layout>
       <SEO
         title="首頁"
         description="料理不翻車，地方媽媽私藏料理食譜，簡單製作"
-        image={"/main-cover.jpg"}
+        image={cover}
       />
       <main className="page">
         <header className="hero">
