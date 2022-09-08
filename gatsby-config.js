@@ -15,6 +15,8 @@ module.exports = {
     description:
       "煮什麼網站提供乾淨漂亮的網頁，簡單料理的食譜網站，做料理輕鬆容易，不再失敗",
     author: "@jimmyliao",
+    siteUrl: `https://xinyi-cook.netlify.app`,
+    coverImage: "/main-cover.jpg",
   },
 
   plugins: [

@@ -19,7 +19,7 @@ const RecipeTemplate = ({ data }) => {
   const { tags, instructions, ingredients, tools } = content
   return (
     <Layout>
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} image={images[0]} />
       <Wrapper className="page">
         <div className="recipe-page">
           {/* hero */}
