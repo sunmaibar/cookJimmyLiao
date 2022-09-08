@@ -11,7 +11,7 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "煮什麼",
+    title: "今天煮什麼",
     description:
       "煮什麼網站提供乾淨漂亮的網頁，簡單料理的食譜網站，做料理輕鬆容易，不再失敗",
     author: "@jimmyliao",
@@ -24,6 +24,16 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-PGY7WRNPNZ"],
+
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {

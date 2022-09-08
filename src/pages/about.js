@@ -53,7 +53,8 @@ const About = ({
 }
 const Wrapper = styled.section`
   .jimmyliao {
-    color: var(--primary-300);
+    color: var(--primary-600);
+    padding: 0 0.4rem;
   }
 `
 export const query = graphql`

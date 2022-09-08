@@ -6,7 +6,7 @@ const TagsList = ({ recipes }) => {
   const newTags = setupTags(recipes)
   return (
     <div className="tag-container">
-      <h4>食譜分類</h4>
+      <h4>分類索引</h4>
       <div className="tags-list">
         {newTags.map((tag, index) => {
           const [text, value] = tag

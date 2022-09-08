@@ -19,7 +19,11 @@ const RecipeTemplate = ({ data }) => {
   const { tags, instructions, ingredients, tools } = content
   return (
     <Layout>
-      <SEO title={title} description={description} image={images[0]} />
+      <SEO
+        title={title}
+        description={description}
+        image={`https:${images[0].file.url}`}
+      />
       <Wrapper className="page">
         <div className="recipe-page">
           {/* hero */}
@@ -177,6 +181,9 @@ export const query = graphql`
       servings
       slug
       images {
+        file {
+          url
+        }
         gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)
       }
     }
