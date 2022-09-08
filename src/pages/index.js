@@ -6,7 +6,11 @@ import SEO from "../components/SEO"
 export default function Home() {
   return (
     <Layout>
-      <SEO title="首頁" description="this is description" />
+      <SEO
+        title="首頁"
+        description="料理不翻車，地方媽媽私藏料理食譜，簡單製作"
+        image={"/main-cover.jpg"}
+      />
       <main className="page">
         <header className="hero">
           <StaticImage
