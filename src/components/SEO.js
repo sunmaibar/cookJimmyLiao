@@ -30,7 +30,9 @@ const SEO = ({ title, description, image }) => {
         { name: `description`, content: metaDescription },
         { name: `image`, content: metaImage },
       ]}
-    ></Helmet>
+    >
+      <link rel="image_src" href={metaImage} />
+    </Helmet>
   )
 }
 

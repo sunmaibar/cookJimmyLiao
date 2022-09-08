@@ -30,16 +30,16 @@ module.exports = {
         trackingId: "G-PGY7WRNPNZ",
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-google-gtag`,
-    //   options: {
-    //     trackingIds: ["G-PGY7WRNPNZ"],
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: ["G-PGY7WRNPNZ"],
 
-    //     pluginConfig: {
-    //       head: true,
-    //     },
-    //   },
-    // },
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
