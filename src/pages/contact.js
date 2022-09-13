@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import RecipesList from "../components/RecipesList"
 import SEO from "../components/SEO"
 import coverImage from "../assets/images/taipei-city2.jpg"
-
+//common
 const Contact = ({
   data: {
     allContentfulRecipe: { nodes: recipes },
