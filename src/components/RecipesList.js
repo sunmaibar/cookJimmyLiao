@@ -6,14 +6,14 @@ const RecipesList = ({ recipes = [] }) => {
   return (
     <div className="recipes-list">
       {recipes.map(recipe => {
-        const { id, title, images, prepTime, cookTime, slug } = recipe
+        const { id, title, view, images, altitude, slug } = recipe
         const pathImage = getImage(images[0])
         return (
           <Link key={id} to={`/${slug}`} className="recipe">
             <GatsbyImage image={pathImage} className="recipe-img" alt={title} />
             <h5>{title}</h5>
             <p>
-              備料: {prepTime}分鐘 ｜ 烹煮: {cookTime}分鐘
+              海拔: {altitude}m ｜ 展望: {view ? "風景宜人" : "無評估"}
             </p>
           </Link>
         )

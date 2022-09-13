@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { Link } from "gatsby"
 import { FiAlignJustify } from "react-icons/fi"
 import { GiCookingPot } from "react-icons/gi"
-import logo from "../assets/images/woman.png"
+import logo from "../assets/images/logo.png"
 const Navbar = () => {
   const [show, setShow] = useState(false)
   return (
@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="nav-header">
           <Link to="/" className="logocontainer">
             <img src={logo} alt="simply recipes" />
-            <h3>今天煮什麼</h3>
+            <h3>南港山系</h3>
           </Link>
 
           <button className="nav-btn" onClick={() => setShow(!show)}>
@@ -33,7 +33,7 @@ const Navbar = () => {
             className="nav-link"
             activeClassName="active-link"
           >
-            各式食譜
+            景點合集
           </Link>
           <Link
             onClick={() => setShow(false)}

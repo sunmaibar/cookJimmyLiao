@@ -6,23 +6,22 @@ import SEO from "../components/SEO"
 export default function Home() {
   return (
     <Layout>
-      <SEO
-        title="首頁"
-        description="料理不翻車，地方媽媽私藏料理食譜，簡單製作"
-      />
+      <SEO title="首頁" />
       <main className="page">
         <header className="hero">
           <StaticImage
-            src="../assets/images/main.jpeg"
-            alt="eggs"
+            src="../assets/images/taipei-city2.jpg"
+            alt="taipei city"
             className="hero-img"
             placeholder="tracedSVG"
             layout="fullWidth"
           />
           <div className="hero-container">
             <div className="hero-text">
-              <h1>料理不翻車</h1>
-              <h4>地方媽媽私藏料理食譜，輕鬆製作好菜上桌</h4>
+              <h2>台北南港山系全攻略</h2>
+              <h5>
+                位於台北信義區的南港山系，也包含了四座以虎豹獅象合稱四獸山，面積廣闊有著許多休閒步道與世界知名景點，也有著許多自然生態，交通便捷是都市人愛前去散步的地方。
+              </h5>
             </div>
           </div>
         </header>

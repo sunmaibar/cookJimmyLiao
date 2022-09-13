@@ -9,18 +9,18 @@
   /* COLORS  */
   /* primary */
   --primary-0: #f0efff;
-  --primary-50: #fbd7f8;
-  --primary-100: #fbcef7;
-  --primary-200: #fac4f5;
-  --primary-300: #f9baf3;
-  --primary-400: #f8b0f1;
+  --primary-50: #a3b7ab;
+  --primary-100: #769381;
+  --primary-200: #5f816c;
+  --primary-300: #486f57;
+  --primary-400: #315d42;
   /* main */
-  --primary-500: #f69cee;
-  --primary-600: #c57dbe;
-  --primary-700: #ac6da7;
-  --primary-800: #945e8f;
-  --primary-900: #7b4e77;
-  --primary-1000: #4a2f47;
+  --primary-500: #1a4b2d;
+  --primary-600: #174429;
+  --primary-700: #153c24;
+  --primary-800: #12351f;
+  --primary-900: #102d1b;
+  --primary-1000: #0a1e12;
   --primary-1100: #0a0919;
   /* grey */
   --grey-0: #fafbfc;
@@ -461,8 +461,8 @@ form > *:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--black);
-  color: var(--white);
+  background: var(--primary-700);
+  color: var(--primary-100);
 }
 .page-footer h5 {
   margin-bottom: 0;
@@ -472,7 +472,7 @@ form > *:last-child {
 }
 .page-footer span,
 .page-footer a {
-  color: var(--primary-500);
+  color: var(--white);
 }
 
 /*#########*/
@@ -535,6 +535,7 @@ form > *:last-child {
 .featured-recipes > h5 {
   text-align: center;
   max-width: 100%;
+  margin-top: 2rem;
 }
 /*#########*/
 /* Hero */
@@ -564,6 +565,7 @@ form > *:last-child {
 .hero-text {
   color: var(--white);
   text-align: center;
+  width: 90%;
 }
 
 @media only screen and (min-width: 768px) {

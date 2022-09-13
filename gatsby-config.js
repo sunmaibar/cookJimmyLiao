@@ -11,9 +11,9 @@ require("dotenv").config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "今天煮什麼",
+    title: "南港山系",
     description:
-      "煮什麼網站提供乾淨漂亮的網頁，簡單料理的食譜網站，做料理輕鬆容易，不再失敗",
+      "位於台北信義區的南港山系，也包含了四座以虎豹獅象合稱四獸山，面積廣闊有著許多休閒步道與世界知名景點，也有著許多自然生態，交通便捷是都市人愛前去散步的地方。",
     author: "@jimmyliao",
     siteUrl: `https://xinyi-cook.netlify.app`,
     coverImage: "/main-cover.jpg",
@@ -24,6 +24,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

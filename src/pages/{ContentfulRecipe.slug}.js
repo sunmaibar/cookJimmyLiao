@@ -1,27 +1,61 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { BsClockHistory, BsClock, BsPeople } from "react-icons/bs"
+import { BsShift, BsPinMap, BsBinoculars } from "react-icons/bs"
 import Layout from "../components/Layout"
 import styled from "styled-components"
 import SEO from "../components/SEO"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
+// import { BLOCKS } from "@contentful/rich-text-types"
+import { renderRichText } from "gatsby-source-contentful/rich-text"
+import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
+
 const RecipeTemplate = ({ data }) => {
   const {
     title,
-    author,
-    cookTime,
     content,
-    prepTime,
-    servings,
-    description: { description },
+    altitude,
+    view,
+    area,
+    bio: { raw },
     images,
+    createdAt,
   } = data.contentfulRecipe
   const { tags, instructions, ingredients, tools } = content
+
+  const Text = ({ children }) => <p>{children}</p>
+  const options = {
+    renderNode: {
+      [BLOCKS.PARAGRAPH]: (node, children) => <Text>{children}</Text>,
+    },
+    renderText: text =>
+      text.split("\n").flatMap((text, i) => [i > 0 && <br />, text]),
+  }
+  const richText = JSON.parse(raw)
+  // const options = {
+  //   renderMark: {
+  //     [MARKS.BOLD]: text => <p>{text}</p>,
+  //   },
+  //   renderNode: {
+  //     [INLINES.HYPERLINK]: (node, children) => {
+  //       const { uri } = node.data
+  //       return (
+  //         <a href={uri} className="underline">
+  //           {children}
+  //         </a>
+  //       )
+  //     },
+  //     [BLOCKS.HEADING_2]: (node, children) => {
+  //       return <h2>{children}</h2>
+  //     },
+  //   },
+  // }
+
   return (
     <Layout>
       <SEO
         title={title}
-        description={description}
+        description={richText}
         image={`https:${images[0].file.url}`}
       />
       <Wrapper className="page">
@@ -36,26 +70,26 @@ const RecipeTemplate = ({ data }) => {
             <article className="recipe-info">
               <div className="recipe-title">
                 <h2>{title}</h2>
-                <p>作者：{author}</p>
               </div>
-
-              <p>{description}</p>
+              {/* <p>{description}</p> */}
+              <p>{documentToReactComponents(richText, options)}</p>
+              <h5 classNmae="created-at">post at {createdAt}</h5>
               {/* icons */}
               <div className="recipe-icons">
                 <article>
-                  <BsClock />
-                  <h5>備菜</h5>
-                  <p>{prepTime} 分鐘.</p>
+                  <BsShift />
+                  <h5>海拔</h5>
+                  <p>{altitude} m</p>
                 </article>
                 <article>
-                  <BsClockHistory />
-                  <h5>烹煮</h5>
-                  <p>{cookTime} 分鐘.</p>
+                  <BsBinoculars />
+                  <h5>展望</h5>
+                  <p>{view ? "風景宜人" : "無評估"} </p>
                 </article>
                 <article>
-                  <BsPeople />
-                  <h5>份量</h5>
-                  <p>{servings} 人份</p>
+                  <BsPinMap />
+                  <h5>區域</h5>
+                  <p>{area} </p>
                 </article>
               </div>
               {/* tags */}
@@ -87,12 +121,12 @@ const RecipeTemplate = ({ data }) => {
           {/* rest of the content */}
           <section className="recipe-content">
             <article>
-              <h4>烹調指引</h4>
+              <h4>探險指引</h4>
               {instructions.map((item, index) => {
                 return (
                   <div key={index} className="single-instruction">
                     <header>
-                      <p>步驟 {index + 1}</p>
+                      <p>指引 {index + 1}</p>
                       <div></div>
                     </header>
                     <p>{item}</p>
@@ -102,7 +136,7 @@ const RecipeTemplate = ({ data }) => {
             </article>
             <article className="second-column">
               <div>
-                <h4>食材準備</h4>
+                <h4>注意事項</h4>
                 {ingredients.map((item, index) => {
                   return (
                     <p key={index} className="single-ingredient">
@@ -111,13 +145,19 @@ const RecipeTemplate = ({ data }) => {
                   )
                 })}
               </div>
-              <div>
-                <h4>所需器材</h4>
+              <div className="have">
+                <h4>附近可能有</h4>
                 {tools.map((tool, index) => {
-                  return (
-                    <p key={index} className="single-tool">
-                      {tool}
-                    </p>
+                  const { title, link } = tool
+                  return link ? (
+                    <Link key={index} to={link}>
+                      {" "}
+                      <p className="bg" key={index}>
+                        {title}
+                      </p>
+                    </Link>
+                  ) : (
+                    <p key={index}>{title}</p>
                   )
                 })}
               </div>
@@ -138,6 +178,24 @@ const Wrapper = styled.main`
       margin-left: 1rem;
     }
   }
+  .have p.bg {
+    font-size: 1.2rem;
+    background-color: var(--primary-100);
+    border-radius: 0.3rem;
+    text-align: center;
+    color: var(--white);
+  }
+  .have p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  .recipe-info {
+    h5 {
+      font-size: 0.8rem;
+      color: var(--primary-100);
+    }
+  }
+
   .rest-images {
     display: grid;
     gap: 1rem 1rem;
@@ -167,18 +225,23 @@ export const query = graphql`
       id
       author
       title
-      cookTime
+      view
+      altitude
+      area
       content {
         ingredients
         instructions
         tags
-        tools
+        tools {
+          link
+          title
+        }
       }
-      description {
-        description
+      createdAt(formatString: "MMMM Do, YYYY")
+      bio {
+        raw
       }
-      prepTime
-      servings
+
       slug
       images {
         file {

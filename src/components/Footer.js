@@ -4,8 +4,9 @@ const Footer = () => {
   return (
     <footer className="page-footer">
       <p>
-        &copy; {new Date().getFullYear()} <span>今天煮什麼</span> 由{" "}
-        <a href="https://www.facebook.com/jajalaba/">Jimmy Liao </a>建立管理
+        &copy; {new Date().getFullYear()} <span>南港山系</span> 由{" "}
+        <a href="https://www.facebook.com/jajalaba/">Jimmy Liao </a>
+        建立
       </p>
     </footer>
   )

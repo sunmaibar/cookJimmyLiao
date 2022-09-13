@@ -24,8 +24,8 @@ export const query = graphql`
       nodes {
         id
         title
-        prepTime
-        cookTime
+        altitude
+        area
         slug
         images {
           gatsbyImageData(layout: CONSTRAINED, placeholder: TRACED_SVG)

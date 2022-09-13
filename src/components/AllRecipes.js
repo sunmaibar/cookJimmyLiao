@@ -7,9 +7,9 @@ const query = graphql`
   query {
     allContentfulRecipe(sort: { fields: author }) {
       nodes {
-        cookTime
+        view
         id
-        prepTime
+        altitude
         title
         slug
         content {

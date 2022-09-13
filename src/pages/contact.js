@@ -17,12 +17,13 @@ const Contact = ({
           <article className="contact-info">
             <h3>想要與站長聯繫?</h3>
             <p>
-              美食人人愛，若能在家親自動手做給親愛的家人，那種幸福感與成就感是無法言喻。
+              如有需求想要與站長聯繫，這裡可以留下些資訊送出，但是這裡比較會收到垃圾訊息，所以很容易略過。
             </p>
             <p>
-              網站上的食譜資訊，皆由地方上的賢慧媽媽提供，再由版主親自拍照整理文字資料，上傳到網站上彙整。
+              聯繫站長最快的方式，可以至FB{" "}
+              <a href="https://www.facebook.com/jajalaba">JimmyLiao</a>
+              私訊我比較妥當，如需回覆請留下正確Email
             </p>
-            <p>想要與網站版主聯繫發送訊息，請詳細填寫資訊給我，感謝。</p>
           </article>
           <article>
             <form
@@ -49,7 +50,7 @@ const Contact = ({
           </article>
         </section>
         <section className="featured-recipes">
-          <h5>看看這些怎麼做的!</h5>
+          <h5>也許你會喜歡這些地方!</h5>
           <RecipesList recipes={recipes} />
         </section>
       </main>
@@ -64,9 +65,9 @@ export const query = graphql`
       filter: { featured: { eq: true } }
     ) {
       nodes {
-        cookTime
+        area
         id
-        prepTime
+        altitude
         title
         slug
         images {
