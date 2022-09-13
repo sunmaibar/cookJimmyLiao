@@ -12,7 +12,7 @@ const Contact = ({
 }) => {
   return (
     <Layout>
-      <SEO title="聯繫站長" image={image} />
+      <SEO title="聯繫站長" image={coverImage} />
       <main className="page">
         <section className="contact-page">
           <article className="contact-info">
