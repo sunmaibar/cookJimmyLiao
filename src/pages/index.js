@@ -3,10 +3,11 @@ import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import AllRecipes from "../components/AllRecipes"
 import SEO from "../components/SEO"
+import coverImage from "../assets/images/taipei-city2.jpg"
 export default function Home() {
   return (
     <Layout>
-      <SEO title="首頁" />
+      <SEO title="首頁" image={coverImage} />
       <main className="page">
         <header className="hero">
           <StaticImage
