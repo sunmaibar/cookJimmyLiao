@@ -3,11 +3,13 @@ import { graphql } from "gatsby"
 import RecipesList from "../components/RecipesList"
 import Layout from "../components/Layout"
 import SEO from "../components/SEO"
+import coverImage from "../assets/images/taipei-city2.jpg"
+
 const TagTemplate = ({ data, pageContext }) => {
   const recipes = data.allContentfulRecipe.nodes
   return (
     <Layout>
-      <SEO title={pageContext.tag} />
+      <SEO title={pageContext.tag} image={coverImage} />
       <main className="page">
         <h2>{pageContext.tag}</h2>
         <div className="tag-recipes">

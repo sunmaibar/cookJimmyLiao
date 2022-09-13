@@ -3,11 +3,13 @@ import Layout from "../components/Layout"
 import { graphql, Link } from "gatsby"
 import setupTags from "../utils/setupTags"
 import SEO from "../components/SEO"
+import coverImage from "../assets/images/taipei-city2.jpg"
+
 const Tags = ({ data }) => {
   const newTags = setupTags(data.allContentfulRecipe.nodes)
   return (
     <Layout>
-      <SEO title="食譜分類" />
+      <SEO title="景點分類" image={coverImage} />
       <main className="page">
         <section className="tags-page">
           {newTags.map((tag, index) => {

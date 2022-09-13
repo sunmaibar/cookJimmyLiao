@@ -5,6 +5,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import { Link, graphql } from "gatsby"
 import RecipesList from "../components/RecipesList"
 import SEO from "../components/SEO"
+import coverImage from "../assets/images/taipei-city2.jpg"
 
 const About = ({
   data: {
@@ -13,7 +14,7 @@ const About = ({
 }) => {
   return (
     <Layout>
-      <SEO title="關於" />
+      <SEO title="關於" image={coverImage} />
       <main className="page">
         <Wrapper className="about-page">
           <article>

@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import RecipesList from "../components/RecipesList"
 import SEO from "../components/SEO"
+import coverImage from "../assets/images/taipei-city2.jpg"
 
 const Contact = ({
   data: {
@@ -11,7 +12,7 @@ const Contact = ({
 }) => {
   return (
     <Layout>
-      <SEO title="聯繫站長" />
+      <SEO title="聯繫站長" image={image} />
       <main className="page">
         <section className="contact-page">
           <article className="contact-info">
