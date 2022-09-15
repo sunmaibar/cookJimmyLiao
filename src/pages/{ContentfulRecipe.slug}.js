@@ -7,7 +7,6 @@ import styled from "styled-components"
 import SEO from "../components/SEO"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // import { BLOCKS } from "@contentful/rich-text-types"
-import { renderRichText } from "gatsby-source-contentful/rich-text"
 import { INLINES, BLOCKS, MARKS } from "@contentful/rich-text-types"
 
 const RecipeTemplate = ({ data }) => {
@@ -55,7 +54,7 @@ const RecipeTemplate = ({ data }) => {
     <Layout>
       <SEO
         title={title}
-        description={richText}
+        // description={richText}
         image={`https:${images[0].file.url}`}
       />
       <Wrapper className="page">
@@ -72,6 +71,7 @@ const RecipeTemplate = ({ data }) => {
                 <h2>{title}</h2>
               </div>
               {/* <p>{description}</p> */}
+              {/* <p>{documentToReactComponents(raw)}</p> */}
               <p>{documentToReactComponents(richText, options)}</p>
               <h5 classNmae="created-at">post at {createdAt}</h5>
               {/* icons */}
