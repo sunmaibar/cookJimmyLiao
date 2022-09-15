@@ -21,7 +21,7 @@ const RecipeTemplate = ({ data }) => {
     images,
     createdAt,
   } = data.contentfulRecipe
-  const { tags, instructions, ingredients, tools } = content
+  const { tags, instructions, ingredients, tools = [] } = content
 
   const Text = ({ children }) => <p>{children}</p>
   const options = {
@@ -107,16 +107,18 @@ const RecipeTemplate = ({ data }) => {
           </section>
           {/* rest of images */}
           <section className="recipe-content rest-images">
-            {images.slice(1).map((img, idx) => {
-              const pathToImage = getImage(img)
-              return (
-                <GatsbyImage
-                  className="rest-single-image"
-                  key={idx}
-                  image={pathToImage}
-                />
-              )
-            })}
+            {images.length > 1
+              ? images.slice(1).map((img, idx) => {
+                  const pathToImage = getImage(img)
+                  return (
+                    <GatsbyImage
+                      className="rest-single-image"
+                      key={idx}
+                      image={pathToImage}
+                    />
+                  )
+                })
+              : null}
           </section>
           {/* rest of the content */}
           <section className="recipe-content">
