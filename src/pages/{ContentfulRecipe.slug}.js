@@ -249,7 +249,7 @@ export const query = graphql`
         file {
           url
         }
-        gatsbyImageData(layout: CONSTRAINED)
+        gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
       }
     }
   }
