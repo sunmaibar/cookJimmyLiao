@@ -3,7 +3,7 @@ import Layout from "../components/Layout"
 import { StaticImage } from "gatsby-plugin-image"
 import AllRecipes from "../components/AllRecipes"
 import SEO from "../components/SEO"
-import coverImage from "../assets/images/taipei-city2.jpg"
+import coverImage from "../assets/images/fb-cover.jpg"
 export default function Home() {
   return (
     <Layout>
