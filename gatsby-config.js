@@ -9,6 +9,9 @@ require("dotenv").config({
 })
 
 module.exports = {
+  flags: {
+    PARALLEL_QUERY_RUNNING: true,
+  },
   /* Your site config here */
   siteMetadata: {
     title: "南港山系",
