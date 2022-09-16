@@ -11,7 +11,7 @@ const Navbar = () => {
         <div className="nav-header">
           <Link to="/" className="logocontainer">
             <img src={logo} alt="simply recipes" />
-            <h3>南港山系</h3>
+            <h3>四獸山系</h3>
           </Link>
 
           <button className="nav-btn" onClick={() => setShow(!show)}>
