@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from "gatsby"
 
 const query = graphql`
   query {
-    allContentfulRecipe(sort: { fields: author }) {
+    allContentfulRecipe(sort: { order: ASC, fields: title }) {
       nodes {
         view
         id
