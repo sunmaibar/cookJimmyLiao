@@ -73,7 +73,7 @@ const RecipeTemplate = ({ data }) => {
               {/* <p>{description}</p> */}
               {/* <p>{documentToReactComponents(raw)}</p> */}
               <p>{documentToReactComponents(richText, options)}</p>
-              <h5 classNmae="created-at">post at {createdAt}</h5>
+              <h5 classNmae="created-at">posted in {createdAt}</h5>
               {/* icons */}
               <div className="recipe-icons">
                 <article>
