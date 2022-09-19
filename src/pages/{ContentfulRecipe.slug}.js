@@ -84,7 +84,7 @@ const RecipeTemplate = ({ data }) => {
                 <article>
                   <BsBinoculars />
                   <h5>展望</h5>
-                  <p>{view ? "風景宜人" : "無評估"} </p>
+                  <p>{view ? "風景宜人" : "無"} </p>
                 </article>
                 <article>
                   <BsPinMap />
@@ -196,6 +196,9 @@ const Wrapper = styled.main`
       font-size: 0.8rem;
       color: var(--primary-100);
     }
+  }
+  .goodview {
+    color: var(--red-dark);
   }
 
   .rest-images {
