@@ -29,6 +29,7 @@ export const query = graphql`
         altitude
         area
         slug
+        view
         images {
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
         }
