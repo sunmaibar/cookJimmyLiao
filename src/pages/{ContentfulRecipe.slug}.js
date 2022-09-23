@@ -163,6 +163,9 @@ const RecipeTemplate = ({ data }) => {
                   )
                 })}
               </div>
+              <Link className="btn backhome" to="/">
+                回首頁
+              </Link>
             </article>
           </section>
         </div>
@@ -199,6 +202,9 @@ const Wrapper = styled.main`
   }
   .goodview {
     color: var(--red-dark);
+  }
+  .backhome {
+    text-align: center;
   }
 
   .rest-images {
