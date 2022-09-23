@@ -21,7 +21,7 @@ export default function Home() {
             <div className="hero-text">
               <h2>台北四獸山全攻略</h2>
               <h5>四獸指的是虎豹獅象</h5>
-              <h5>這是一本景點書，記錄著四獸山上的一切</h5>
+              <h5>這是一本景點書記錄著四獸山上的一切</h5>
             </div>
           </div>
         </header>
