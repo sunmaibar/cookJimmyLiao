@@ -72,8 +72,10 @@ const RecipeTemplate = ({ data }) => {
               </div>
               {/* <p>{description}</p> */}
               {/* <p>{documentToReactComponents(raw)}</p> */}
-              <p>{documentToReactComponents(richText, options)}</p>
-              <h5 classNmae="created-at">posted in {createdAt}</h5>
+              <div className="recipe-infobox">
+                <p>{documentToReactComponents(richText, options)}</p>
+                <h5 className="created-at">posted in {createdAt}</h5>
+              </div>
               {/* icons */}
               <div className="recipe-icons">
                 <article>
@@ -204,6 +206,10 @@ const Wrapper = styled.main`
     color: var(--red-dark);
   }
   .backhome {
+    text-align: center;
+  }
+
+  .created-at {
     text-align: center;
   }
 
